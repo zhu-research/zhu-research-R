@@ -3,6 +3,9 @@
 \name{download_airnow}
 \alias{download_airnow}
 \title{Download AirNow data}
+\usage{
+download_airnow(start_date, end_date)
+}
 \arguments{
 \item{start_date}{The starting date in "YYYY-MM-DD" format}
 
