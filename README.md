@@ -5,5 +5,6 @@ R scripts and packages for use among Dr. Yifang Zhu's lab
 
 `
 library(devtools)
+
 install_github("zhu-research/zhu-research-R/zhuResearch")
 `
