@@ -1,6 +1,11 @@
-# function to download AirNow data
-# currently only works for dates in the same year
-# for Dr. Zhu's lab, July 30 2021
+#' function to download AirNow data
+#' currently only works for dates in the same year
+#' for Dr. Zhu's lab, July 30 2021
+#' @param start_date The starting date in "YYYY-MM-DD" format
+#' @param end_date The ending date in "YYYY-MM-DD" format
+
+requireNamespace("lubridate") # R package for handling dates easily
+requireNamespace("stringr")   # R package for handling strings easily
 
 # input start_date and end_date as "YYYY-MM-DD", including quotation marks, such as "2020-12-30"
 
@@ -11,9 +16,6 @@ download_airnow <- function(start_date, end_date) {
       # 1. year
       # 2. year month date
       # 3. year month date hour
-
-  require(lubridate) # R package for handling dates easily
-  require(stringr)   # R package for handling strings easily
 
   # format start and end dates into the date format to create an interval
   start_date <- as_date(start_date)
@@ -57,4 +59,4 @@ download_airnow <- function(start_date, end_date) {
 
 }
 
-#
+# test
