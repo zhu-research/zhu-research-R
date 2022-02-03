@@ -25,17 +25,17 @@ download_airnow <- function(start_date, end_date) {
       # 3. year month date hour
 
   # format start and end dates into the date format to create an interval
-  start_date <- as_date(start_date)
-  end_date <- as_date(end_date)
+  start_date <- lubridate::as_date(start_date)
+  end_date <- lubridate::as_date(end_date)
 
   # get the interval of dates between the start and end date
-  date_interval <- as_date(start_date:end_date)
+  date_interval <- lubridate::as_date(start_date:end_date)
 
   # remove the dashes, which we do not need
-  date_interval <- str_remove_all(date_interval, "-")
+  date_interval <- stringr::str_remove_all(date_interval, "-")
 
   # extract the year
-  year <- year(start_date)
+  year <- lubridate::year(start_date)
 
   # on AirNow, hour values range from 00 to 23
   # paste0: paste without a separator
