@@ -3,6 +3,8 @@
 #' @param start_date The starting date in "YYYY-MM-DD" format
 #' @param end_date The ending date in "YYYY-MM-DD" format
 #' @name download_airnow
+#' @import lubridate
+#' @import stringr
 #' @export
 #' @examples
 #' download_airnow("2020-01-01", "2020-02-01")
