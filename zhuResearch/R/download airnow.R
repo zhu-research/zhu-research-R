@@ -2,6 +2,7 @@
 #' @description function to download AirNow data, currently only works for dates in the same year
 #' @param start_date The starting date in "YYYY-MM-DD" format
 #' @param end_date The ending date in "YYYY-MM-DD" format
+#' @name download_airnow
 #' @export
 #' @examples
 #' download_airnow("2020-01-01", "2020-02-01")
