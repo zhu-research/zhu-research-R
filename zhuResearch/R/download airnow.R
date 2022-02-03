@@ -11,8 +11,6 @@
 #' download_airnow("2019-08-10", "2019-12-10")
 
 
-requireNamespace("lubridate") # R package for handling dates easily
-requireNamespace("stringr")   # R package for handling strings easily
 
 # input start_date and end_date as "YYYY-MM-DD", including quotation marks, such as "2020-12-30"
 
@@ -23,6 +21,10 @@ download_airnow <- function(start_date, end_date) {
       # 1. year
       # 2. year month date
       # 3. year month date hour
+
+  requireNamespace("lubridate") # R package for handling dates easily
+  requireNamespace("stringr")   # R package for handling strings easily
+
 
   # format start and end dates into the date format to create an interval
   start_date <- lubridate::as_date(start_date)
