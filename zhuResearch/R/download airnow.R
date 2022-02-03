@@ -2,10 +2,11 @@
 #' @description function to download AirNow data, currently only works for dates in the same year
 #' @param start_date The starting date in "YYYY-MM-DD" format
 #' @param end_date The ending date in "YYYY-MM-DD" format
+#' @export
 #' @examples
 #' download_airnow("2020-01-01", "2020-02-01")
 #' download_airnow("2019-08-10", "2019-12-10")
-#' @export
+
 
 requireNamespace("lubridate") # R package for handling dates easily
 requireNamespace("stringr")   # R package for handling strings easily
