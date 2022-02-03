@@ -7,7 +7,7 @@
 read_airnow(airnow, wide = F)
 }
 \arguments{
-\item{airnow}{Character vector AirNow file name. Can be length 1 or longer.}
+\item{airnow}{Character vector AirNow file name. Can be length 1 or longer. Merges multiple files together if length is greater than 1.}
 
 \item{wide}{Boolean of whether you want the data in wide (TRUE) or long (FALSE) format. Default is FALSE (long data)}
 }
