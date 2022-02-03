@@ -37,7 +37,7 @@ read_airnow <- function(airnow, wide = F) {
       if(wide) {
         x2 <- x2 %>%
           dplyr::select(!unit) %>%
-          tidyr::pivot_wider(names_from = "pollutant", values_from = "measurement", values_fill = NA, )
+          tidyr::pivot_wider(names_from = "pollutant", values_from = "measurement", values_fn = "list")
 
       }
 
