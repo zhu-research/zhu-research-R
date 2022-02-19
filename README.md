@@ -13,7 +13,7 @@ R scripts and packages for use among Dr. Yifang Zhu's lab
 
 `pems_login`: A wrapper for RSelenium that opens and logs into the CalTrans PeMS database. Users need to supply their own credentials, which can be obtained by contacting CalTrans directly. This function requires a Docker installation. Depending on internet connection, Docker, and the CalTrans website, logging in can be a little bit inconsistent, but repeating attempts should work. 
 
-`get_pems_id`: Given a set of coordinates, scrapes the CalTrans PeMS database to collect the IDs and (optionally) GPS coordinates of nearby traffic detectors. 
+`get_pems_id`: Given a set of coordinates, scrapes the CalTrans PeMS database to collect the IDs and (optionally) GPS coordinates of nearby traffic detectors. Requires logging in to PeMS, which can be done with `pems_login`.
 
 ## Note
 
