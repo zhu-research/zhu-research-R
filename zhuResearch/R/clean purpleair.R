@@ -21,10 +21,19 @@ clean_PA <- function(PA_df, criteria = "manufacture", calibrate = TRUE) {
       mutate(pm2.5_diff = abs(pm2.5-pm2.5b), # cleaning
              pm2.5_mean = (pm2.5+pm2.5b)/2,
              pm2.5_ratio = pm2.5_diff/pm2.5_mean,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 3dd6e1b9b9daa6a3d187fdf0a30a3f785ef1a3ab
              # pm2.5_diff_sd = sd(pm2.5_diff, na.rm=T), # this is EPA criteria, which we are not using(?)
              # pm2.5_zscore = abs(pm2.5_diff-pm2.5_diff_mean)/pm2.5_diff_sd,
              # ex1 = ifelse(abs(pm2.5_diff) >= 5, 1,0),
              # ex2 = ifelse(abs(pm2.5_zscore) >= 2, 1,0), # 2 standard deviations from the mean
+<<<<<<< HEAD
+=======
+>>>>>>> e6ca5dc8611c0483fa81baa68f13cfd28c1d1f34
+>>>>>>> 3dd6e1b9b9daa6a3d187fdf0a30a3f785ef1a3ab
              ex1 = ifelse(pm2.5 < 100 & pm2.5_diff >= 10, 1,0), # manufacturer's standard
              ex1 = ifelse(pm2.5 >= 100 & pm2.5_ratio >= 0.1, 1,ex1),# replace ex1 with 2nd exclusion criteria if
              pm2.5 = ifelse(ex1 == 0, (pm2.5+pm2.5b)/2, NA)) %>%
