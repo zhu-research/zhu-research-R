@@ -35,35 +35,30 @@ read_airnow <- function(airnow, wide = F) {
       }
 
     }
-  } else {
-
+  }   else {
     df <- lapply(airnow, function(x) {
-
       x2 <- fread(x)
-
-      names(x2) <- c("date", "time", "AQS_ID", "name", "timezone", "pollutant", "unit", "measurement", "agency")
+      names(x2) <- c("date", "time", "AQS_ID", "name",
+                     "timezone", "pollutant", "unit", "measurement",
+                     "agency")
       pollutants <- unique(x2$pollutant)
 
-      if(wide) {
-        x2 <- x2 %>%
-          dplyr::select(!unit) %>%
-          tidyr::pivot_wider(names_from = "pollutant", values_from = "measurement", values_fn = mean)
+      if (wide) {
+        x2 <- x2 %>% dplyr::select(!unit) %>% tidyr::pivot_wider(names_from = "pollutant",
+                                                                 values_from = "measurement", values_fn = mean)
       }
 
-
+      for (i in 1:length(pollutants)) {
+        df[,pollutants[i]] <- df[,pollutants[i]] %>% unlist()
+      }
 
       return(x2)
-
-    }) %>%
-      data.table::rbindlist(fill = T)
+    }) %>% data.table::rbindlist(fill = T)
 
     df[df == "NULL"] <- NA
-    for(i in 1:length(pollutants)) {
-      df[[pollutants[i]]] <-  df[[pollutants[i]]] %>%
-        unlist()
-    }
 
   }
+
 
   return(df)
 
