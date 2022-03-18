@@ -2,6 +2,7 @@
 #' @description function to download AirNow data, currently only works for dates in the same year
 #' @param start_date The starting date in "YYYY-MM-DD" format
 #' @param end_date The ending date in "YYYY-MM-DD" format
+#' @param output_path The output path
 #' @name download_airnow
 #' @import lubridate
 #' @import stringr
@@ -14,7 +15,15 @@
 
 # input start_date and end_date as "YYYY-MM-DD", including quotation marks, such as "2020-12-30"
 
-download_airnow <- function(start_date, end_date) {
+download_airnow <- function(start_date, end_date, output_path = "./") {
+
+  if(str_sub(output_path, nchar(output_path), nchar(output_path)) != "/") {
+    output_path <- paste0(output_path, "/")
+  }
+
+  if (!file.exists(output_path)) {
+    dir.create(output_path, recursive = T)
+  }
 
   # sample AirNow URL: https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/2018/20180101/HourlyData_2018010100.dat
     # there are three parts we need to input ourselves:
@@ -62,10 +71,9 @@ download_airnow <- function(start_date, end_date) {
 
   for(i in 1:length(url_to_download)) {
 
-    download.file(url_to_download[i], destfile = paste0(year_month_date_hours[i], ".dat"))
+    download.file(url_to_download[i], destfile = paste0(output_path, year_month_date_hours[i], ".dat"))
 
     }
 
 }
 
-# test
