@@ -4,12 +4,14 @@
 \alias{download_airnow}
 \title{Download AirNow data}
 \usage{
-download_airnow(start_date, end_date)
+download_airnow(start_date, end_date, output_path = "./")
 }
 \arguments{
 \item{start_date}{The starting date in "YYYY-MM-DD" format}
 
 \item{end_date}{The ending date in "YYYY-MM-DD" format}
+
+\item{output_path}{The output path}
 }
 \description{
 function to download AirNow data, currently only works for dates in the same year

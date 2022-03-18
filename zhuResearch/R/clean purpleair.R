@@ -43,7 +43,7 @@ clean_PA <- function(PA_df, criteria = "manufacture", calibrate = TRUE) {
           ex1 = ifelse(pm2.5 < 100 & pm2.5_diff >= 10, 1,0), # manufacturer's standard
           ex1 = ifelse(pm2.5 >= 100 & pm2.5_ratio >= 0.1, 1,ex1),# replace ex1 with 2nd exclusion criteria if
           pm2.5 = ifelse(ex1 == 0, (pm2.5+pm2.5b)/2, NA)
-      ) %>%
+        ) %>%
         filter(!is.na(pm2.5))
 
     }
