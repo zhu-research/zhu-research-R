@@ -4,7 +4,7 @@
 \alias{pems_login}
 \title{Log into PeMS}
 \usage{
-pems_login(user, pass, port_no = 4445L)
+pems_login(user, pass, new_port = F, port_no = 4445L)
 }
 \arguments{
 \item{user}{Username or email address to log into PeMS account}
@@ -14,5 +14,8 @@ pems_login(user, pass, port_no = 4445L)
 \item{port_no}{Port number to be used by RSelenium, 4445 by default. Only change if necessary!}
 }
 \description{
-Set up RSelenium and log into PeMS. Requires a valid PeMS account (see https://pems.dot.ca.gov/). Requires a Docker (https://www.docker.com/) to be installed and running.
+Set up RSelenium and log into PeMS. Requires a valid PeMS account (see https://pems.dot.ca.gov/). Requires a Docker (https://www.docker.com/) to be installed and running. Usage can be a little unreliable depending on internet connection, Docker, and the PeMS website. If it takes too long to connect to the server or you get an error, wait a little and try again.
+}
+\author{
+Jonathan Liu
 }
